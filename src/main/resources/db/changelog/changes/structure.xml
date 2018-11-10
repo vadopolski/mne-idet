@@ -1,0 +1,104 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="vadim (generated)" id="1541804966864-1">
+        <createTable tableName="client">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="client_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_vk" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(512)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1541804966864-2">
+        <createTable tableName="consultant">
+            <column name="id" type="VARCHAR(255)">
+                <constraints primaryKey="true" primaryKeyName="consultant_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1541804966864-3">
+        <createTable tableName="hint">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="hint_pkey"/>
+            </column>
+            <column name="consultant_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hint_type_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="TIMESTAMP WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1541804966864-4">
+        <createTable tableName="hint_type">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="hint_type_pkey"/>
+            </column>
+            <column name="question_photo_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hint_type_order" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="evaluation" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1541804966864-5">
+        <createTable tableName="question_photo">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="question_photo_pkey"/>
+            </column>
+            <column name="id_photo" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="client_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="question_photo_order" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1541804966864-6">
+        <addForeignKeyConstraint baseColumnNames="consultant_id" baseTableName="hint" constraintName="hint_consultant_id_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="consultant" validate="true"/>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1541804966864-7">
+        <addForeignKeyConstraint baseColumnNames="hint_type_id" baseTableName="hint" constraintName="hint_hint_type_id_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="hint_type" validate="true"/>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1541804966864-8">
+        <addForeignKeyConstraint baseColumnNames="question_photo_id" baseTableName="hint_type" constraintName="hint_type_question_photo_id_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="question_photo" validate="true"/>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1541804966864-9">
+        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="question_photo" constraintName="question_photo_client_id_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="client" validate="true"/>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1541804966864-10">
+        <insert tableName="client">
+            <column name="id" value='55555'/>
+            <column name="name" value="Artem"/>
+            <column name="id_vk" value="id_vk_Panchic"/>
+            <column name="description" value="Test Test Test"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
