@@ -1,33 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <title>Claim Prototype</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+        .delete_ico {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        .delete_ico:hover {
+            color: 990000;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <br/><br/>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3>Claim Prototype</h3>
-            </div>
-        </div><!-- end of row -->
-        <div class="row">
-            <div class="col-md-6">
-                <form id="leftForm" action="/">
-                    <div class="card" style="width: 100%;">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="claimName">Claim name</label>
-                                <input type="text" class="form-control" id="claimName" aria-describedby="claimDataHelp"
-                                       placeholder="Claim">
-                                <small id="claimDataHelp" class="form-text text-muted">Enter claim name.</small>
+<br/><br/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Mne Idet Adding Client</h3>
+        </div>
+    </div><!-- end of row -->
+    <div class="row">
+        <div class="col-md-6">
+            <form id="leftForm" action="/">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="clientIdVk">Client VK id</label>
+                            <input type="text" class="form-control" id="clientIdVk" aria-describedby="clientHelp"
+                                   placeholder="Client VK id">
+                            <small id="clientIdVkHelp" class="form-text text-muted">Choose client.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientName">Client name</label>
+                            <input type="text" class="form-control" id="clientName" aria-describedby="clientDataHelp"
+                                   placeholder="Client">
+                            <small id="clientNameDataHelp" class="form-text text-muted">Enter client name.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientAddingDate">Claim Date</label>
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="clientAddingDate" aria-describedby="reminderDateHelp"
+                                           placeholder="Date and Time">
+                                    <!--<input type="date" id="party" name="party" min="2017-04-01" max="2017-04-20" required>-->
+                                    <!--<span class="validity"></span>-->
+                                    <small id="reminderDateHelp" class="form-text text-muted">Enter date and time.
+                                    </small>
+                                </div>
+                                <div class="col-xs-1">
+                                    <a href="#" class="btn btn-light"><i class="fa fa-calendar"></i></a>
+                                </div>
                             </div>
                         </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="isStatusVIP">
+                            <label class="form-check-label" for="isStatusVIP">VIP status</label>
+                        </div>
+
+                        <button type="button" id="form-submit" class="btn btn-primary" onclick="insertDataToList(getDataFromForm())">Add client</button>
+                        <button type="button" id="form-clear" class="btn btn-light" onclick="clearLeftForm()">Clear</button>
+                        <button type="reset" class="btn btn-dark" >Clear</button>
                     </div>
-                </form>
-            </div>
-        </div>
-    </div>
+                </div>
+            </form>
+        </div><!-- end of col-md-6 -->
+        <div class="col-md-6">
+            <form id="rightForm" action="/">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h4 class="card-title">Client list:</h4>
+                        <ul class="list-group" id="clientList">
+                            <li class="list-group-item disabled">No task</li>
+                        </ul>
+                        <br/>
+                        <button type="reset" id="form-client-list-reset" class="btn btn-dark" onclick="emptyAllList()">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </div><!-- end of col-md-6 -->
+    </div> <!-- end of row -->
+</div>
+<script src="MyScript.js"></script>
 </body>
 </html>
