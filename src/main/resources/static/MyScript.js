@@ -146,3 +146,8 @@ const saveData = () => {
     parent.insertBefore(newElement, element);
     parent.removeChild(element);
 };
+
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
