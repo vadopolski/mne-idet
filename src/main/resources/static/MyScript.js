@@ -147,7 +147,7 @@ const saveData = () => {
     parent.removeChild(element);
 };
 
-function myFunction() {
-    var popup = document.getElementById("myPopup");
+const popupShow = () => {
+    const popup = document.querySelector("#myPopup");
     popup.classList.toggle("show");
-}
+};
