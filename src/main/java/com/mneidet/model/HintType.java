@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
-public class Alternative {
+public class HintType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

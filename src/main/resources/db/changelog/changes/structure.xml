@@ -73,7 +73,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="question_photo_order" type="BIGINT">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="description" type="TEXT">
                 <constraints nullable="false"/>
@@ -82,14 +82,8 @@
     </changeSet>
     <changeSet author="vadim (generated)" id="1541804966864-6">
         <addForeignKeyConstraint baseColumnNames="consultant_id" baseTableName="hint" constraintName="hint_consultant_id_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="consultant" validate="true"/>
-    </changeSet>
-    <changeSet author="vadim (generated)" id="1541804966864-7">
         <addForeignKeyConstraint baseColumnNames="hint_type_id" baseTableName="hint" constraintName="hint_hint_type_id_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="hint_type" validate="true"/>
-    </changeSet>
-    <changeSet author="vadim (generated)" id="1541804966864-8">
         <addForeignKeyConstraint baseColumnNames="question_photo_id" baseTableName="hint_type" constraintName="hint_type_question_photo_id_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="question_photo" validate="true"/>
-    </changeSet>
-    <changeSet author="vadim (generated)" id="1541804966864-9">
         <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="question_photo" constraintName="question_photo_client_id_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="client" validate="true"/>
     </changeSet>
     <changeSet author="vadim (generated)" id="1541804966864-10">
@@ -99,6 +93,43 @@
             <column name="id_vk" value="id_vk_Panchic"/>
             <column name="description" value="Test Test Test"/>
         </insert>
+        <insert tableName="client">
+            <column name="id" value='7777'/>
+            <column name="name" value="Vadim"/>
+            <column name="id_vk" value="id_vk_Opolski"/>
+            <column name="description" value="Test Test Test"/>
+        </insert>
+        <insert tableName="client">
+            <column name="id" value='3333'/>
+            <column name="name" value="Oleg"/>
+            <column name="id_vk" value="id_vk_Presnjakov"/>
+            <column name="description" value="Test Test Test"/>
+        </insert>
+        <insert tableName="client">
+            <column name="id" value='22222'/>
+            <column name="name" value="Masha"/>
+            <column name="id_vk" value="id_vk_Petrova"/>
+            <column name="description" value="Test Test Test"/>
+        </insert>
+        <insert tableName="client">
+            <column name="id" value='1111'/>
+            <column name="name" value="Alina"/>
+            <column name="id_vk" value="id_vk_GayFullina"/>
+            <column name="description" value="Test Test Test"/>
+        </insert>
+        <insert tableName="consultant">
+            <column name="id" value='1111Artem'/>
+            <column name="name" value="Panchik"/>
+        </insert>
+        <insert tableName="consultant">
+            <column name="id" value='22222Vadim'/>
+            <column name="name" value="Opolski"/>
+        </insert>
+        <insert tableName="question_photo">
+            <column name="id" value='1111111'/>
+            <column name="id_photo" value="xxxxxxx"/>
+            <column name="client_id" value="1111"/>
+            <column name="description" value="See pls I want to by a Cap"/>
+        </insert>
     </changeSet>
-
 </databaseChangeLog>

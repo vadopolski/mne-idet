@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Data
 @Entity
-public class Attempt {
+public class Hint {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -20,8 +20,8 @@ public class Attempt {
 
     @NotNull
     @ManyToOne
-    @JoinColumn (name = "alternative_id")
-    private Alternative alternative;
+    @JoinColumn (name = "hint_type_id")
+    private HintType hintType;
 
     @NotNull
     private Date date;

@@ -29,16 +29,14 @@ public class ClientController {
         return clients;
     }
 
-    // TODO: 25.11.18  Dont working
-    @GetMapping("/clients2")
+    @GetMapping("/clientAdd")
     public List<Client> getClientList2() {
         List<Client> clients = new ArrayList<>();
         Client client = new Client();
-        client.setId(7777);
-        client.setId_vk("131233BBBBB");
-        client.setName("Vaim");
+        client.setDescription("Vadim from interface2");
+        client.setId_vk("131233BBBBB2");
+        client.setName("Vaim2");
         clientRepository.save(client);
-
         clientRepository.findAll().forEach(clients::add);
 
         return clients;
