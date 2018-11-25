@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
 
     @NotNull
     private String name;
@@ -21,4 +21,36 @@ public class Client {
 
     @NotNull
     private String description;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getId_vk() {
+        return id_vk;
+    }
+
+    public void setId_vk(String id_vk) {
+        this.id_vk = id_vk;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
