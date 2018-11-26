@@ -10,5 +10,6 @@ public interface ClientRepository extends CrudRepository<Client, Long> {
     Long countByName(String name);
 
     List<Client> findByName(String name);
+    Client findById(Integer id);
 
 }

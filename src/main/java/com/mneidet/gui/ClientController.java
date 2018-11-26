@@ -1,7 +1,9 @@
 package com.mneidet.gui;
 
 import com.mneidet.model.Client;
+import com.mneidet.model.QuestionFoto;
 import com.mneidet.repository.ClientRepository;
+import com.mneidet.repository.QuestionFotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -42,6 +44,21 @@ public class ClientController {
         return clients;
     }
 
+    @GetMapping("/clientUpdate")
+    public List<Client> updateClient() {
+        List<Client> clients = new ArrayList<>();
+        Client client = new Client();
+        client.setId(1111);
+        client.setDescription("Vadim from interface2");
+        client.setId_vk("131233BBBBB2");
+        client.setName("Vaim3Updated");
+
+        clientRepository.save(client);
+        clientRepository.findAll().forEach(clients::add);
+
+        return clients;
+    }
+
     @GetMapping("/clientbyname")
     public List<Client> getClientByName(@RequestParam(name = "name") String name) {
         return clientRepository.findByName(name);
@@ -53,26 +70,4 @@ public class ClientController {
         Client client = clientRepository.findById(longId).get();
         return new ResponseEntity<Client>(client, HttpStatus.OK);
     }
-
-    // TODO: 25.11.18 Dont working
-    @PostMapping("client")
-    public ResponseEntity<Void> addArticle(@RequestBody Client client, UriComponentsBuilder builder) {
-        boolean flag;
-
-        List<Client> list = clientRepository.findByName(client.getName());
-        if (list.size() > 0) {
-            flag = false;
-        } else {
-            clientRepository.save(client);
-            flag = true;
-        }
-
-        if (flag == false) {
-            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
-        }
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(builder.path("/client/{id}").buildAndExpand(client.getId()).toUri());
-        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
-    }
-
 }
