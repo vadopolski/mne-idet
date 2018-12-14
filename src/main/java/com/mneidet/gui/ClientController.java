@@ -13,6 +13,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 
 @RestController
 public class ClientController {
@@ -23,6 +25,7 @@ public class ClientController {
         this.clientRepository = clientRepository;
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/clients")
     public List<Client> getClientList() {
         List<Client> clients = new ArrayList<>();
@@ -32,7 +35,7 @@ public class ClientController {
     }
 
     @GetMapping("/clientAdd")
-    public List<Client> getClientList2() {
+    public List<Client> setClient() {
         List<Client> clients = new ArrayList<>();
         Client client = new Client();
         client.setDescription("Vadim from interface2");
@@ -45,7 +48,13 @@ public class ClientController {
     }
 
     @GetMapping("/clientUpdate")
-    public List<Client> updateClient() {
+    public List<Client> updateClientName(long id) {
+        Client cl = new Client();
+        Optional<Client> optionalClient = Optional.of(cl);
+
+        Optional<Client> byId = clientRepository.findById(id);
+        byId.get().setName("New Name");
+
         List<Client> clients = new ArrayList<>();
         Client client = new Client();
         client.setId(1111);
