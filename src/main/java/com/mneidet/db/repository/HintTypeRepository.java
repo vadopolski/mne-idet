@@ -1,7 +1,7 @@
-package com.mneidet.repository;
+package com.mneidet.db.repository;
 
-import com.mneidet.model.HintType;
-import com.mneidet.model.QuestionFoto;
+import com.mneidet.db.entity.HintType;
+import com.mneidet.db.entity.QuestionFoto;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

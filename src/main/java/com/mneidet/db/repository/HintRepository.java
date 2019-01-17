@@ -1,8 +1,8 @@
-package com.mneidet.repository;
+package com.mneidet.db.repository;
 
-import com.mneidet.model.HintType;
-import com.mneidet.model.Hint;
-import com.mneidet.model.Consultant;
+import com.mneidet.db.entity.HintType;
+import com.mneidet.db.entity.Hint;
+import com.mneidet.db.entity.Consultant;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.mneidet.model;
+package com.mneidet.db.entity;
 
 import lombok.Data;
 

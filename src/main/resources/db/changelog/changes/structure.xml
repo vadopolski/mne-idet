@@ -88,33 +88,33 @@
     </changeSet>
     <changeSet author="vadim (generated)" id="1541804966864-10">
         <insert tableName="client">
-            <column name="id" value='55555'/>
-            <column name="name" value="Artem"/>
-            <column name="id_vk" value="id_vk_Panchic"/>
+            <column name="id" value='77777777'/>
+            <column name="name" value="Alina"/>
+            <column name="id_vk" value="muchachka"/>
             <column name="description" value="Test Test Test"/>
         </insert>
         <insert tableName="client">
             <column name="id" value='7777'/>
             <column name="name" value="Vadim"/>
-            <column name="id_vk" value="id_vk_Opolski"/>
+            <column name="id_vk" value="vopolski"/>
             <column name="description" value="Test Test Test"/>
         </insert>
         <insert tableName="client">
             <column name="id" value='3333'/>
             <column name="name" value="Oleg"/>
-            <column name="id_vk" value="id_vk_Presnjakov"/>
+            <column name="id_vk" value="iamcreator"/>
             <column name="description" value="Test Test Test"/>
         </insert>
         <insert tableName="client">
             <column name="id" value='22222'/>
-            <column name="name" value="Masha"/>
-            <column name="id_vk" value="id_vk_Petrova"/>
+            <column name="name" value="Galya"/>
+            <column name="id_vk" value="kocharina"/>
             <column name="description" value="Test Test Test"/>
         </insert>
         <insert tableName="client">
             <column name="id" value='1111'/>
             <column name="name" value="Alina"/>
-            <column name="id_vk" value="id_vk_GayFullina"/>
+            <column name="id_vk" value="muchachka"/>
             <column name="description" value="Test Test Test"/>
         </insert>
         <insert tableName="consultant">

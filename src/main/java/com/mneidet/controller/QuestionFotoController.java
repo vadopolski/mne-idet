@@ -1,7 +1,7 @@
-package com.mneidet.gui;
+package com.mneidet.controller;
 
-import com.mneidet.model.QuestionFoto;
-import com.mneidet.repository.QuestionFotoRepository;
+import com.mneidet.db.entity.QuestionFoto;
+import com.mneidet.db.repository.QuestionFotoRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

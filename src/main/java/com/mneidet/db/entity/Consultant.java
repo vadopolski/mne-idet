@@ -1,11 +1,9 @@
-package com.mneidet.model;
+package com.mneidet.db.entity;
 
 import lombok.Data;
-import lombok.NonNull;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
